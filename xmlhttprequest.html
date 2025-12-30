@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        window.getData = getData;
+        function getData(){
+            let url="https://jsonplaceholder.typicode.com/users"
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload =function(){
+                document.getElementById("header").textContent = this.getAllResponseHeaders()
+                document.getElementById("body").textContent = this.responseText 
+
+            }
+            xhttp.open("GET",url);
+            xhttp.send();   
+        }
+// here is new line added in githuband this is what we can see
+    </script>
+</head>
+<body>
+    <button onclick="getData()">Get Data</button>
+    <p id="header"></p>
+    <p id="body"></p>
+  
+</body>
+</html>
